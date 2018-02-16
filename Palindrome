@@ -1,32 +1,57 @@
-//This program evaluates whether or not a string is a palindrome
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Palindrome {
     public static void main(String args[]) {
-       
-       
-       int stringlength;
-       String test = "hannah";
-       stringlength = test.length();
-       int halfstring;
-       
-       if ((stringlength-stringlength) == 0)
-       {
-        halfstring = stringlength/2;
-        int beginning = halfstring-halfstring;
-        String firsthalf = test.substring(beginning, halfstring);
-        String secondhalf = test.substring(halfstring);
-        firsthalf = firsthalf.toCharArray();// here the second hald of the string needs to be converted into a char array (lookup api) and then the values compared to the other half
-        System.out.println("The first half of your string is " + firsthalf);
-        System.out.println("The second half of your string is " + secondhalf);
-        
-             if (firsthalf==secondhalf)
-             {
-             System.out.println("Your string is a palindrome");
-             }
-        else
-        System.out.println("Your string is not a palindrome");
-       }
-        else
-        System.out.println("Program Ended");
+
+
+        int stringlength;
+        String test = "hannah";
+        stringlength = test.length();
+        int halfstring;
+
+        if ((stringlength - stringlength) == 0) {
+            halfstring = stringlength / 2;
+            int beginning = halfstring - halfstring;
+            String firsthalf = test.substring(beginning, halfstring);
+            String secondhalf = test.substring(halfstring);
+
+            // here the second half of the string needs to be converted into a char array
+            // (lookup api) and then the values compared to the other half
+
+            char[] charpalindrome1 = firsthalf.toCharArray();
+            int char1length = charpalindrome1.length;
+            System.out.println("The first half of your string is ");
+            for (int count = 0; count <= char1length - 1; count++) {
+                System.out.print(charpalindrome1[count]);
+            }
+
+
+            char[] charpalindrome2 = secondhalf.toCharArray();
+            int char2length = charpalindrome2.length;
+            System.out.println("\nThe second half of your string is ");
+            for (int count1 = 0; count1 <= char2length - 1; count1++) {
+                System.out.print(charpalindrome2[count1]);
+            }
+
+            Collections.reverse(Arrays.asList(charpalindrome2));
+            System.out.println("\nNow, the second half of your string is ");
+            for (int count1 = char2length-1; count1 != -1 ;count1--) {
+                System.out.print(charpalindrome2[count1]);
+            }
+
+            /*
+
+            if  {
+                System.out.println("Your string is a palindrome");
+            } else
+                System.out.println("Your string is not a palindrome");
+        } else
+            System.out.println("Program Ended");
+
+*/
+
+        }
     }
+
 }
