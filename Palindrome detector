@@ -1,0 +1,40 @@
+//This program evaluates whether or not a string is a palindrome
+
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String args[]) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter a word: ");
+        String test = input.nextLine();
+        int charlength;
+
+        char[] charpalindrome = test.toCharArray();
+        charlength = charpalindrome.length;
+        charlength = charlength - 1;
+        boolean[] conditionsmet = new boolean[charlength + 1];
+        boolean palindrome = true;
+
+        for (int count = 0; count <= charlength; count++) {
+            if (charpalindrome[count] == (charpalindrome[(charlength - count)])) {
+                conditionsmet[count] = true;
+            }
+
+            if (conditionsmet[count] == false) {
+                System.out.println("\nYour string is " + test +
+                                "\nYour string is not a palindrome");
+                palindrome = false;
+                break;
+            }
+        }
+        if (palindrome)
+        System.out.println("\nYour string is: " + test +
+                "\nYour string is a palindrome");
+
+
+    }
+
+}
+
+
